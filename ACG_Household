@@ -1,0 +1,851 @@
+<skuidpage unsavedchangeswarning="yes" useviewportmeta="true">
+    <models>
+        <model id="Household" limit="1" query="true" createrowifnonefound="false" datasource="salesforce" type="" sobject="Account" doclone="">
+            <fields>
+                <field id="RecordTypeId"/>
+                <field id="OASP__OAS_Last_Name__c"/>
+                <field id="OASP__OAS_First_Name__c"/>
+                <field id="OASP__OAS_Rep__c"/>
+                <field id="OASP__OAS_Rep__r.Name"/>
+                <field id="OASP__OAS_Report_Name__c"/>
+                <field id="Type"/>
+                <field id="Id"/>
+                <field id="Name"/>
+                <field id="Phone"/>
+                <field id="OASP__OAS_Household_Value__c"/>
+                <field id="OASP__OAS_Household_ID__c"/>
+                <field id="OASP__OAS_Email__c"/>
+                <field id="eMoney__c"/>
+                <field id="OASP__OAS_Email2__c"/>
+                <field id="Client_ID__c"/>
+                <field id="ShippingAddress"/>
+                <field id="ShippingCity"/>
+                <field id="ShippingState"/>
+                <field id="ShippingPostalCode"/>
+                <field id="ShippingStreet"/>
+                <field id="BillingStreet"/>
+                <field id="BillingCity"/>
+                <field id="BillingState"/>
+                <field id="BillingPostalCode"/>
+                <field id="Primary_Phone_Type__c"/>
+                <field id="OASP__OAS_Work_Phone__c"/>
+                <field id="OASP__OAS_Mobile_Phone__c"/>
+                <field id="Annual_Income_from_all_sources__c"/>
+                <field id="Net_Worth_excluding_residence__c"/>
+                <field id="Investable_Assets__c"/>
+                <field id="Current_Tax_Bracket__c"/>
+                <field id="Financial_Objective__c"/>
+                <field id="Risk_Attitude__c"/>
+                <field id="Investment_Experience_Primary__c"/>
+                <field id="Investment_Experience_Secondary__c"/>
+                <field id="Investment_Time_Horizon__c"/>
+                <field id="Income_Needs__c"/>
+                <field id="Advisor__c"/>
+                <field id="OASP__OAS_Statement_Delivery__c"/>
+                <field id="Preferred_Mailing_Name__c"/>
+                <field id="OASP__Orion_Rep_ID__c"/>
+                <field id="OASP__OAS_SSN__c"/>
+                <field id="OASP__OAS_Birthdate__c"/>
+                <field id="Owner.Name"/>
+                <field id="OASP__OAS_Household_Cash_Value__c"/>
+                <field id="OASP__OAS_Performance_OneYear__c"/>
+                <field id="OASP__OAS_Performance_ThreeYear__c"/>
+                <field id="OASP__OAS_Performance_QTD__c"/>
+                <field id="OASP__OAS_Performance_YTD__c"/>
+                <field id="OASP__OAS_Performance_AsOfDate__c"/>
+                <field id="OASP__OAS_Unrealized_GL__c"/>
+                <field id="OASP__OAS_Reailzed_GL_YTD__c"/>
+                <field id="OASP__OAS_Realized_GL_Previous_Year__c"/>
+                <field id="LastModifiedDate"/>
+                <field id="LastModifiedBy.Name"/>
+                <field id="Tax_Client__c"/>
+            </fields>
+            <conditions>
+                <condition type="param" value="Id" field="Id" operator="=" novaluebehavior="" enclosevalueinquotes="true"/>
+            </conditions>
+            <actions/>
+        </model>
+        <model id="ACG_Contacts" limit="10" query="true" createrowifnonefound="false" datasource="salesforce" type="" sobject="Contact" doclone="" forview="false">
+            <fields>
+                <field id="RecordTypeId"/>
+                <field id="FirstName"/>
+                <field id="LastName"/>
+                <field id="HomePhone"/>
+                <field id="MobilePhone"/>
+                <field id="OtherPhone"/>
+                <field id="Primary_Phone_Type__c"/>
+                <field id="Phone"/>
+                <field id="Age__c"/>
+                <field id="Birthdate"/>
+                <field id="Tax_ID__c"/>
+                <field id="Relationship_In_The_HH__c"/>
+                <field id="AccountId"/>
+                <field id="Account.Name"/>
+                <field id="Mobile_Phone_Note__c"/>
+                <field id="Occupation__c"/>
+                <field id="Employer__c"/>
+                <field id="Systematic_Arrangements__c"/>
+                <field id="Email"/>
+                <field id="Personal_Email__c"/>
+                <field id="Other_Email__c"/>
+                <field id="Work_Email__c"/>
+                <field id="IM_Contract_Date__c"/>
+                <field id="Client_Profile_Date__c"/>
+            </fields>
+            <conditions>
+                <condition type="modelmerge" value="" field="Account.Id" operator="=" model="Household" enclosevalueinquotes="true" mergefield="Id" novaluebehavior="deactivate" state="" inactive="false" fieldtargetobjects="Account"/>
+            </conditions>
+            <actions/>
+        </model>
+        <model id="ACG_Contacts_Primary" limit="2" query="true" createrowifnonefound="false" datasource="salesforce" type="" sobject="Contact" doclone="" forview="false">
+            <fields>
+                <field id="RecordTypeId"/>
+                <field id="FirstName"/>
+                <field id="LastName"/>
+                <field id="HomePhone"/>
+                <field id="MobilePhone"/>
+                <field id="OtherPhone"/>
+                <field id="Primary_Phone_Type__c"/>
+                <field id="Phone"/>
+                <field id="Age__c"/>
+                <field id="Birthdate"/>
+                <field id="Tax_ID__c"/>
+                <field id="Relationship_In_The_HH__c"/>
+                <field id="AccountId"/>
+                <field id="Account.Name"/>
+                <field id="Mobile_Phone_Note__c"/>
+                <field id="Occupation__c"/>
+                <field id="Employer__c"/>
+                <field id="Systematic_Arrangements__c"/>
+                <field id="Email"/>
+                <field id="Personal_Email__c"/>
+                <field id="Other_Email__c"/>
+                <field id="Work_Email__c"/>
+                <field id="IM_Contract_Date__c"/>
+                <field id="Client_Profile_Date__c"/>
+            </fields>
+            <conditions>
+                <condition type="modelmerge" value="" field="Account.Id" operator="=" model="Household" enclosevalueinquotes="true" mergefield="Id" novaluebehavior="deactivate" state="" inactive="false" fieldtargetobjects="Account"/>
+                <condition type="multiple" value="" field="Relationship_In_The_HH__c" operator="in" enclosevalueinquotes="true">
+                    <values>
+                        <value>Head of HH</value>
+                        <value>Spouse/Partner</value>
+                    </values>
+                </condition>
+            </conditions>
+            <actions/>
+        </model>
+        <model id="Accounts_Orion" limit="10" query="true" createrowifnonefound="false" datasource="salesforce" type="" sobject="OASP__Financial_Account__c" doclone="" orderby=" OASP__OAS_Active__c DESC, OASP__OAS_Registration_ID__c DESC, Name">
+            <fields>
+                <field id="OASP__OAS_Account_Type__c"/>
+                <field id="OASP__OAS_Account_Value__c"/>
+                <field id="OASP__OAS_Active__c"/>
+                <field id="OASP__Bill_Cycle_Month__c"/>
+                <field id="OASP__OAS_Cash_Value__c"/>
+                <field id="OASP__OAS_Business_Line__r.Name"/>
+                <field id="OASP__OAS_Custodian__c"/>
+                <field id="OASP__OAS_Custodian__r.Name"/>
+                <field id="OASP__OAS_Model_Name__c"/>
+                <field id="OASP__OAS_Performance_OneYear__c"/>
+                <field id="OASP__OAS_Performance_ThreeYear__c"/>
+                <field id="OASP__OAS_Performance_MTD__c"/>
+                <field id="OASP__OAS_Performance_QTD__c"/>
+                <field id="OASP__OAS_Performance_YTD__c"/>
+                <field id="OASP__OAS_Performance_AsOfDate__c"/>
+                <field id="OASP__OAS_Realized_GL_YTD__c"/>
+                <field id="OASP__OAS_Business_Line__c"/>
+                <field id="OASP__Fee_Schedule__c"/>
+                <field id="Name"/>
+                <field id="OASP__OAS_Account_ID__c"/>
+                <field id="OASP__OAS_Registration__c"/>
+                <field id="OASP__OAS_Registration__r.Name"/>
+                <field id="OASP__OAS_Registration__r.OASP__OAS_First_Name__c"/>
+                <field id="OASP__OAS_Registration__r.OASP__OAS_Last_Name__c"/>
+                <field id="OASP__OAS_Registration__r.CreatedDate"/>
+                <field id="OASP__OAS_Start_Date__c"/>
+                <field id="OASP__OAS_Unrealized_GL__c"/>
+                <field id="OASP__OAS_Household__c"/>
+                <field id="OASP__OAS_Household__r.Name"/>
+                <field id="OASP__OAS_Household__r.OASP__OAS_Household_ID__c"/>
+                <field id="OASP__Bill_Frequency__c"/>
+                <field id="OASP__Bill_Style__c"/>
+                <field id="OASP__Bill_Valuation_Method__c"/>
+                <field id="OASP__Payout_Schedule__c"/>
+                <field id="OASP__OAS_Registration_ID__c"/>
+                <field id="OASP__OAS_Registration__r.OASP__OAS_SSN__c"/>
+                <field id="OASP__OAS_Registration__r.OASP__OAS_Birthdate__c"/>
+                <field id="OASP__Pay_Method__c"/>
+            </fields>
+            <conditions>
+                <condition type="modelmerge" value="" field="OASP__OAS_Household__r.OASP__OAS_Household_ID__c" fieldtargetobjects="Account" operator="=" model="Household" enclosevalueinquotes="false" mergefield="OASP__OAS_Household_ID__c" novaluebehavior="deactivate"/>
+            </conditions>
+            <actions/>
+        </model>
+        <model id="Insurance_Data" limit="50" query="true" createrowifnonefound="false" datasource="salesforce" type="" sobject="Insurance_Policy__c">
+            <fields>
+                <field id="Household__r.Id"/>
+                <field id="Household__r.Name"/>
+                <field id="Company__c"/>
+                <field id="Type__c"/>
+                <field id="Policy_Term__c"/>
+                <field id="Policy_Owner__c"/>
+                <field id="Policy_Number__c"/>
+                <field id="Policy_Date__c"/>
+                <field id="LTC_Policy_Maximum_Benefit__c"/>
+                <field id="Agent_Name__c"/>
+                <field id="Cash_Value__c"/>
+                <field id="Cash_Value_as_Of__c"/>
+                <field id="Coverage_Amount__c"/>
+                <field id="CreatedDate"/>
+                <field id="CreatedBy.Name"/>
+                <field id="Current_Death_Benefit__c"/>
+                <field id="Insured__c"/>
+                <field id="LTC_Home_Health_Care_Benefit__c"/>
+                <field id="LTC_Inflation_Protection__c"/>
+                <field id="LTC_Benefit_Period__c"/>
+                <field id="LTC_Issue_Age__c"/>
+                <field id="LTC_Nursing_Home_Max__c"/>
+                <field id="LastModifiedDate"/>
+                <field id="LastModifiedBy.Name"/>
+                <field id="Plan_Type__c"/>
+                <field id="Plan_Name__c"/>
+                <field id="Owner_Text__c"/>
+                <field id="Premium_Frequency__c"/>
+                <field id="Settlement_Value__c"/>
+                <field id="Id"/>
+                <field id="Status__c"/>
+                <field id="Surrender_Value_Current_Year__c"/>
+                <field id="Wait_Period__c"/>
+            </fields>
+            <conditions>
+                <condition type="modelmerge" value="" field="Household__r.Id" operator="=" model="Household" enclosevalueinquotes="true" mergefield="Id" novaluebehavior="deactivate" state="filterableon" inactive="false" name="Household__r.Id"/>
+            </conditions>
+            <actions/>
+        </model>
+        <model id="HH_Act_Hist" limit="50" query="true" createrowifnonefound="false" datasource="salesforce" type="" sobject="Task" orderby="Status ASC" doclone="">
+            <fields>
+                <field id="Owner.Name"/>
+                <field id="Status"/>
+                <field id="FSTR__Completed_Date__c"/>
+                <field id="LastModifiedDate"/>
+                <field id="Subject"/>
+                <field id="FSTR__Account_Name__c"/>
+                <field id="Who.Name"/>
+                <field id="Account.Id"/>
+                <field id="Account.OASP__OAS_Household_ID__c"/>
+                <field id="Description"/>
+                <field id="Who.LastName"/>
+                <field id="CreatedDate"/>
+                <field id="Id"/>
+                <field id="IsReminderSet"/>
+                <field id="ReminderDateTime"/>
+                <field id="Priority"/>
+                <field id="CreatedBy.Name"/>
+                <field id="LastModifiedBy.Name"/>
+                <field id="IsRecurrence"/>
+                <field id="ActivityDate"/>
+                <field id="RecurrenceType"/>
+                <field id="RecurrenceStartDateOnly"/>
+                <field id="RecurrenceInterval"/>
+                <field id="RecurrenceRegeneratedType"/>
+            </fields>
+            <conditions>
+                <condition type="modelmerge" value="" field="AccountId" fieldtargetobjects="Account" operator="=" model="Household" enclosevalueinquotes="true" mergefield="Id" novaluebehavior="deactivate"/>
+                <condition type="multiple" field="Who.Type" operator="in" inactive="true" enclosevalueinquotes="true" name="__autofilter__Who.Type" state="filterableoff" value=""/>
+                <condition type="fieldvalue" field="CreatedDate" operator="gte" inactive="true" enclosevalueinquotes="false" name="__autofilter__start__CreatedDate" state="filterableoff" value=""/>
+                <condition type="fieldvalue" field="CreatedDate" operator="lte" inactive="true" enclosevalueinquotes="false" name="__autofilter__end__CreatedDate" state="filterableoff" value=""/>
+            </conditions>
+            <actions/>
+        </model>
+    </models>
+    <pageregioncontents>
+        <pageregioncontent regionid="sk-3uGMeh-282" uniqueid="sk-3ylpZ3-244">
+            <components>
+                <wrapper uniqueid="sk-3yqQNY-1183">
+                    <components>
+                        <grid uniqueid="sk-1Z_G3J-1146" columngutter="0px">
+                            <divisions>
+                                <division behavior="flex" verticalalign="center" ratio="1" minwidth="55%">
+                                    <components>
+                                        <pagetitle model="Household" uniqueid="sk-3yoIeA-635">
+                                            <actions/>
+                                            <maintitle>{{Name}}</maintitle>
+                                        </pagetitle>
+                                    </components>
+                                </division>
+                                <division behavior="flex" verticalalign="center" ratio="1" minwidth="45%">
+                                    <components>
+                                        <buttonset model="Household" uniqueid="sk-1ZyJc9-928" position="center">
+                                            <buttons>
+                                                <button type="sfdcweblink" uniqueid="sk-1ZyQ79-951" weblinkname="OASP__Household_Overview" label="Household Overview" weblinkobject="Account" icon="sk-icon-assets"/>
+                                                <button type="sfdcweblink" uniqueid="sk-1ZybQE-962" weblinkname="OASP__OAS_Assets_Household" label="Assets" weblinkobject="Account" icon="sk-icon-money"/>
+                                                <button type="sfdcweblink" uniqueid="sk-1ZygDw-973" weblinkname="OASP__OAS_Transactions_Household" label="Transactions" weblinkobject="Account" icon="sk-icon-listview"/>
+                                                <button type="sfdcweblink" uniqueid="sk-1Zyl4e-984" weblinkname="OASP__OAS_Reports" label="Reports" weblinkobject="Account" icon="fa-file-image-o"/>
+                                                <button type="sfdcweblink" uniqueid="sk-1ZyyHP-1004" weblinkname="Loop__LOOP" label="Create PDF" weblinkobject="Account" icon="sk-icon-page-add"/>
+                                            </buttons>
+                                        </buttonset>
+                                    </components>
+                                </division>
+                            </divisions>
+                            <styles>
+                                <styleitem type="background" bgtype="none"/>
+                            </styles>
+                        </grid>
+                    </components>
+                    <styles>
+                        <styleitem type="background" bgtype="color">
+                            <styles>
+                                <styleitem property="background-color" value="#d8d8d8"/>
+                            </styles>
+                        </styleitem>
+                        <styleitem type="border" borders="none" padding="all">
+                            <styles>
+                                <styleitem property="padding" value="8px"/>
+                                <styleitem property="box-sizing" value="border-box"/>
+                            </styles>
+                        </styleitem>
+                        <styleitem type="size" width="full" height="collapse"/>
+                        <styleitem property="Font-Style" value="Strong"/>
+                        <styleitem property="color" value="#41a03f"/>
+                    </styles>
+                    <renderconditions logictype="and"/>
+                </wrapper>
+                <skootable showconditions="true" showsavecancel="false" showerrorsinline="true" searchmethod="server" searchbox="false" showexportbuttons="false" pagesize="all" alwaysresetpagination="false" createrecords="false" model="ACG_Contacts_Primary" buttonposition="" mode="readonly" allowcolumnreordering="false" responsive="true" uniqueid="sk-3yvM9H-714" instantfilters="false" emptysearchbehavior="query" cssclass="">
+                    <fields>
+                        <field id="Relationship_In_The_HH__c" hideable="false" uniqueid="fi-1PtZWz-1115" valuehalign="" type="" showbydefault="true" readonly="true"/>
+                        <field id="FirstName" hideable="false" uniqueid="fi-1PtZWz-1116" valuehalign="" type="" readonly="true" showbydefault="true"/>
+                        <field id="LastName" hideable="false" uniqueid="fi-1PtZWz-1117" valuehalign="" type="" showbydefault="true" readonly="true"/>
+                        <field id="Age__c" hideable="false" uniqueid="fi-1PtZWz-1118" decimalplaces="" valuehalign="" type="" showbydefault="true"/>
+                        <field id="Birthdate" hideable="false" uniqueid="fi-1PtZWz-1119" valuehalign="" type="" readonly="true" showbydefault="true"/>
+                        <field id="Tax_ID__c" hideable="false" uniqueid="fi-1PtZWz-1120" valuehalign="" type="" showbydefault="true" readonly="true"/>
+                    </fields>
+                    <rowactions/>
+                    <massactions usefirstitemasdefault="true"/>
+                    <views/>
+                    <searchfields/>
+                    <renderconditions logictype="and"/>
+                    <actions defaultlabel="Global Actions" defaulticon="sk-icon-magic" usefirstitemasdefault="true"/>
+                </skootable>
+                <basicfieldeditor showheader="true" showsavecancel="true" showerrorsinline="true" model="Household" buttonposition="" uniqueid="sk-1PuYpV-1661" mode="read">
+                    <columns>
+                        <column width="55%">
+                            <sections>
+                                <section title="Client Profile" collapsible="no">
+                                    <fields>
+                                        <field uniqueid="sk-1Pyo7X-2745" id="Annual_Income_from_all_sources__c"/>
+                                        <field uniqueid="sk-1Pyo7X-2746" id="Net_Worth_excluding_residence__c"/>
+                                        <field uniqueid="sk-1Pyo7X-2747" id="Investable_Assets__c"/>
+                                        <field uniqueid="sk-1Pyo7X-2751" id="Current_Tax_Bracket__c" valuehalign="" type=""/>
+                                        <field uniqueid="sk-1Pyo7X-2752" id="Financial_Objective__c" valuehalign="" type=""/>
+                                        <field uniqueid="sk-1Pyo7X-2753" id="Risk_Attitude__c" valuehalign="" type=""/>
+                                        <field uniqueid="sk-1Pyo7X-2748" id="Investment_Experience_Primary__c"/>
+                                        <field uniqueid="sk-1Pyo7X-2749" id="Investment_Experience_Secondary__c"/>
+                                        <field uniqueid="sk-1Pyo7X-2750" id="Investment_Time_Horizon__c"/>
+                                        <field uniqueid="sk-1Pyo7X-2754" id="Income_Needs__c"/>
+                                    </fields>
+                                </section>
+                            </sections>
+                        </column>
+                        <column width="25%">
+                            <sections>
+                                <section title="Misc Information" collapsible="no">
+                                    <fields>
+                                        <field uniqueid="sk-1P_g-d-3998" id="OASP__OAS_First_Name__c"/>
+                                        <field uniqueid="sk-1P_g-d-3999" id="OASP__OAS_Last_Name__c"/>
+                                        <field uniqueid="sk-1P_g-d-4000" id="Preferred_Mailing_Name__c"/>
+                                        <field uniqueid="sk-1P_qMK-4035" id="Type"/>
+                                        <field uniqueid="sk-1P_g-d-4001" id="Advisor__c" valuehalign="" type=""/>
+                                        <field uniqueid="sk-1Q9BDg-3363" id="eMoney__c"/>
+                                        <field uniqueid="sk-1Q9Kdf-3407" id="Tax_Client__c"/>
+                                    </fields>
+                                </section>
+                                <section title="Orion Values" collapsible="no">
+                                    <fields>
+                                        <field uniqueid="sk-1Q1i_n-1591" id="OASP__OAS_Household_Cash_Value__c" showhelp="true" decimalplaces="" valuehalign="" type=""/>
+                                        <field uniqueid="sk-1Q1i_n-1590" id="OASP__OAS_Household_Value__c"/>
+                                    </fields>
+                                </section>
+                            </sections>
+                        </column>
+                        <column width="20%">
+                            <sections>
+                                <section title="Household Contact Information" collapsible="no">
+                                    <fields>
+                                        <field uniqueid="sk-1PwbY--2330" id="Phone" valuehalign="" type="">
+                                            <renderconditions logictype="and" onhidedatabehavior="keep" logic="&lt;&gt; 0 ">
+                                                <rendercondition type="blank" fieldmodel="Household" sourcetype="fieldvalue" sourceproperty="isNew" operator="!=" field="Phone" fieldtargetobjects="Account" value="null" enclosevalueinquotes="false"/>
+                                            </renderconditions>
+                                            <enableconditions/>
+                                        </field>
+                                        <field uniqueid="sk-1PwbY--2331" id="OASP__OAS_Mobile_Phone__c"/>
+                                        <field uniqueid="sk-1PwbY--2332" id="Primary_Phone_Type__c"/>
+                                        <field uniqueid="sk-1PwbY--2333" id="OASP__OAS_Work_Phone__c" showhelp="true" valuehalign="" type="">
+                                            <renderconditions logictype="and" onhidedatabehavior="keep">
+                                                <rendercondition type="blank" operator="!=" fieldmodel="Household" sourcetype="fieldvalue" field="OASP__OAS_Work_Phone__c" fieldtargetobjects="Account" value="null" enclosevalueinquotes="false"/>
+                                            </renderconditions>
+                                            <enableconditions/>
+                                        </field>
+                                        <field uniqueid="sk-1PwbY--2335" id="OASP__OAS_Email__c"/>
+                                    </fields>
+                                </section>
+                                <section title="Household Address - Mailing" collapsible="no">
+                                    <fields>
+                                        <field uniqueid="sk-1PvFEq-1877" id="BillingStreet" valuehalign="" type=""/>
+                                        <field uniqueid="sk-1PvzxP-2173" id="BillingCity"/>
+                                        <field uniqueid="sk-1PvzxP-2174" id="BillingState"/>
+                                        <field uniqueid="sk-1Pw2mH-2203" id="BillingPostalCode"/>
+                                    </fields>
+                                </section>
+                            </sections>
+                        </column>
+                    </columns>
+                </basicfieldeditor>
+                <tabset rememberlastusertab="false" defertabrendering="true" uniqueid="sk-3y-B6L-1597" renderas="">
+                    <tabs>
+                        <tab name="Activity History" loadlazypanels="true">
+                            <components>
+                                <buttonset uniqueid="sk-1Prx6B-650" position="left">
+                                    <buttons>
+                                        <button type="redirect" label="New Task" uniqueid="sk-1Ps2BW-731" window="blank" icon="sk-icon-magic" url="https://na50.salesforce.com/00T/e?retURL=https%3A%2F%2Factivities.na50.visual.force.com%2Fapex%2FActivities%3Fsfdc.tabName%3D01r6A000000PnuE&amp;_CONFIRMATIONTOKEN=VmpFPSxNakF4T0Mwd015MHlOMVF5TVRvd09Eb3hOaTQwTWpaYSw1VUE0SDBfSURDVUx5VkFhZW9pZ3I1LFlUSmxObUpt&amp;common.udd.actions.ActionsUtilORIG_URI=%2F00T%2Fe">
+                                            <popup title="New Popup" width="90%">
+                                                <components/>
+                                            </popup>
+                                        </button>
+                                        <button type="redirect" label="Log a Call" uniqueid="sk-1PrxQb-657" window="blank" url="" icon="sk-icon-phone"/>
+                                    </buttons>
+                                </buttonset>
+                                <skootable showconditions="true" showsavecancel="false" showerrorsinline="true" searchmethod="server" searchbox="true" showexportbuttons="false" pagesize="10" alwaysresetpagination="false" createrecords="true" model="HH_Act_Hist" buttonposition="" mode="read" allowcolumnreordering="true" responsive="true" uniqueid="sk-1PMBEj-1185">
+                                    <fields>
+                                        <field id="Subject" hideable="false" uniqueid="fi-1PMm77-1306" valuehalign="" type="" allowordering="true" showbydefault="true" readonly="true" columnwidth="40vw" maxdisplaycharacters=""/>
+                                        <field id="Who.Name" hideable="false" uniqueid="fi-1PNEeg-1438" valuehalign="" type="" allowordering="true" showbydefault="true" columnwidth="">
+                                            <label>Contact Name</label>
+                                        </field>
+                                        <field id="LastModifiedDate" hideable="false" uniqueid="fi-1PMVrm-1224" valuehalign="" type="" allowordering="true" showbydefault="true"/>
+                                        <field id="FSTR__Completed_Date__c" hideable="false" uniqueid="fi-1PMVrm-1223" valuehalign="" type="" showbydefault="true" allowordering="true" readonly="true"/>
+                                        <field id="Priority" hideable="true" uniqueid="fi-1PodPI-3087" valuehalign="" type=""/>
+                                        <field id="Status" hideable="false" uniqueid="fi-1PMa5f-1258" valuehalign="" type="" readonly="true" allowordering="true" showbydefault="true"/>
+                                        <field id="Owner.Name" hideable="false" uniqueid="fi-1PMVrm-1225" valuehalign="" type="" allowordering="true" showbydefault="true" columnwidth="">
+                                            <label>Assigned to</label>
+                                        </field>
+                                        <field id="CreatedDate" hideable="false" uniqueid="fi-1POnBs-1856" valuehalign="" type="" allowordering="true" showbydefault="true"/>
+                                    </fields>
+                                    <rowactions>
+                                        <action type="drawer" label="Activity_Detail" openicon="sk-icon-listview" icon="sk-icon-import">
+                                            <renderconditions logictype="and"/>
+                                            <drawer title="Drawer Area" width="90%" closehandle="true">
+                                                <components>
+                                                    <basicfieldeditor showheader="true" showsavecancel="true" showerrorsinline="true" model="HH_Act_Hist" buttonposition="" uniqueid="sk-1Pk3iH-1650" mode="read">
+                                                        <columns>
+                                                            <column width="80%">
+                                                                <sections>
+                                                                    <section title="Task Information" collapsible="no">
+                                                                        <fields>
+                                                                            <field uniqueid="sk-1PkvAi-1837" id="Subject" valuehalign="" type="">
+                                                                                <renderconditions logictype="and" onhidedatabehavior="keep"/>
+                                                                                <enableconditions logictype="and"/>
+                                                                            </field>
+                                                                            <field uniqueid="sk-1Porua-3165" id="Priority" valuehalign="" type=""/>
+                                                                            <field uniqueid="sk-1Pl7ZH-1912" id="Status"/>
+                                                                            <field uniqueid="sk-1PlBEg-1925" id="Owner.Name" valuehalign="" type="">
+                                                                                <label>Assigned To</label>
+                                                                            </field>
+                                                                            <field uniqueid="sk-1Pk6ms-1667" id="Description" valuehalign="" type=""/>
+                                                                        </fields>
+                                                                    </section>
+                                                                </sections>
+                                                            </column>
+                                                            <column width="20%">
+                                                                <sections>
+                                                                    <section title="System Information" collapsible="no">
+                                                                        <fields>
+                                                                            <field uniqueid="sk-1Pk6ms-1666" id="CreatedDate" valuehalign="" type=""/>
+                                                                            <field uniqueid="sk-1PlTus-2115" id="CreatedBy.Name" valuehalign="" type="">
+                                                                                <label>Created By</label>
+                                                                            </field>
+                                                                            <field uniqueid="sk-1PlYJR-2163" id="LastModifiedDate"/>
+                                                                            <field uniqueid="sk-1PldY3-2191" id="LastModifiedBy.Name" valuehalign="" type="">
+                                                                                <label>Last Modified By</label>
+                                                                            </field>
+                                                                        </fields>
+                                                                    </section>
+                                                                    <section title="Reminder Details&#10;" collapsible="no">
+                                                                        <fields>
+                                                                            <field uniqueid="sk-1Pn1Oa-2736" id="ReminderDateTime"/>
+                                                                            <field uniqueid="sk-1Pn1Oa-2737" id="IsReminderSet"/>
+                                                                        </fields>
+                                                                    </section>
+                                                                    <section title="Recurring Information" collapsible="no">
+                                                                        <fields>
+                                                                            <field uniqueid="sk-1PnPlb-2913" id="RecurrenceStartDateOnly" valuehalign="" type=""/>
+                                                                            <field uniqueid="sk-1PnPlb-2914" id="RecurrenceType"/>
+                                                                        </fields>
+                                                                    </section>
+                                                                </sections>
+                                                            </column>
+                                                        </columns>
+                                                    </basicfieldeditor>
+                                                </components>
+                                            </drawer>
+                                        </action>
+                                    </rowactions>
+                                    <massactions usefirstitemasdefault="true"/>
+                                    <views/>
+                                    <filters>
+                                        <filter type="multiselect" filteroffoptionlabel="Status Filter" createfilteroffoption="true" affectcookies="false" autocompthreshold="25" conditionsource="auto" labelmode="auto" filtermethod="server" conditionfield="Status" conditionoperator="in"/>
+                                        <filter type="daterange" filteroffoptionlabel="New Filter" createfilteroffoption="true" affectcookies="true" autocompthreshold="25" conditionsource="auto" labelmode="auto" filtermethod="server" conditionfield="CreatedDate" fieldtargetobjects="Contact,Lead"/>
+                                    </filters>
+                                    <actions defaultlabel="Global Actions" defaulticon="sk-icon-magic" usefirstitemasdefault="true"/>
+                                </skootable>
+                            </components>
+                        </tab>
+                        <tab name="Contacts">
+                            <components>
+                                <skootable showconditions="true" showsavecancel="true" showerrorsinline="true" searchmethod="server" searchbox="false" showexportbuttons="false" pagesize="10" alwaysresetpagination="false" createrecords="true" model="ACG_Contacts" buttonposition="" mode="read" allowcolumnreordering="false" responsive="true" uniqueid="sk-3y-Fo1-1631" emptysearchbehavior="query">
+                                    <fields>
+                                        <field id="Relationship_In_The_HH__c" hideable="true" uniqueid="fi-3y-RV9-1681" valuehalign="" type=""/>
+                                        <field id="FirstName" hideable="true" uniqueid="fi-3y-RV5-1674" valuehalign="" type=""/>
+                                        <field id="LastName" hideable="true" uniqueid="fi-3y-RV7-1676" valuehalign="" type=""/>
+                                        <field id="Age__c" hideable="true" uniqueid="fi-3y-RV2-1671" decimalplaces="" valuehalign="" type=""/>
+                                        <field id="Birthdate" hideable="true" uniqueid="fi-3y-RV3-1672"/>
+                                        <field id="Phone" hideable="true" uniqueid="fi-3y-RV4-1673"/>
+                                        <field id="HomePhone" hideable="true" uniqueid="fi-3y-RV6-1675"/>
+                                        <field id="MobilePhone" hideable="true" uniqueid="fi-3y-RV7-1677"/>
+                                        <field id="OtherPhone" hideable="true" uniqueid="fi-3y-RV8-1678" valuehalign="" type=""/>
+                                        <field id="Primary_Phone_Type__c" hideable="true" uniqueid="fi-3y-RV9-1680"/>
+                                        <field id="Tax_ID__c" hideable="true" uniqueid="fi-3y-RVA-1682"/>
+                                    </fields>
+                                    <rowactions>
+                                        <action type="edit"/>
+                                        <action type="delete"/>
+                                        <action type="drawer" label="Run multiple actions" icon="sk-icon-menu" openicon="sk-icon-menu">
+                                            <drawer title="Drawer Area" width="90%" closehandle="true">
+                                                <components>
+                                                    <wrapper uniqueid="sk-2Wnqh-1054">
+                                                        <components>
+                                                            <basicfieldeditor showheader="true" showsavecancel="true" showerrorsinline="true" model="ACG_Contacts" buttonposition="" uniqueid="sk-2Wp8A-1065" mode="read">
+                                                                <columns>
+                                                                    <column width="50%">
+                                                                        <sections>
+                                                                            <section title="Employment Information" collapsible="no">
+                                                                                <fields>
+                                                                                    <field uniqueid="sk-2WrVP-1087" id="Occupation__c"/>
+                                                                                    <field uniqueid="sk-2WtCu-1102" id="Employer__c"/>
+                                                                                    <field uniqueid="sk-2WvGi-1116" id="Work_Email__c"/>
+                                                                                </fields>
+                                                                            </section>
+                                                                            <section title="Additional Contact Information" collapsible="no">
+                                                                                <fields>
+                                                                                    <field uniqueid="sk-2XPrf-1373" id="Personal_Email__c"/>
+                                                                                    <field uniqueid="sk-2XPrf-1374" id="Other_Email__c"/>
+                                                                                    <field uniqueid="sk-2XPrh-1375" id="Email"/>
+                                                                                    <field uniqueid="sk-2XPrh-1376" id="Phone"/>
+                                                                                    <field uniqueid="sk-2XPrh-1377" id="HomePhone"/>
+                                                                                    <field uniqueid="sk-2XPri-1378" id="MobilePhone"/>
+                                                                                    <field uniqueid="sk-2XPri-1379" id="Mobile_Phone_Note__c"/>
+                                                                                    <field uniqueid="sk-2XPrj-1380" id="OtherPhone"/>
+                                                                                    <field uniqueid="sk-2XPrj-1381" id="Primary_Phone_Type__c"/>
+                                                                                </fields>
+                                                                            </section>
+                                                                        </sections>
+                                                                    </column>
+                                                                    <column width="50%">
+                                                                        <sections>
+                                                                            <section title="Client Info Sheet" collapsible="no">
+                                                                                <fields>
+                                                                                    <field uniqueid="sk-2X2bf-1243" id="IM_Contract_Date__c"/>
+                                                                                    <field uniqueid="sk-2X2bh-1244" id="Client_Profile_Date__c"/>
+                                                                                    <field uniqueid="sk-2X2bh-1245" id="Systematic_Arrangements__c"/>
+                                                                                </fields>
+                                                                            </section>
+                                                                        </sections>
+                                                                    </column>
+                                                                </columns>
+                                                            </basicfieldeditor>
+                                                        </components>
+                                                        <styles>
+                                                            <styleitem type="background"/>
+                                                            <styleitem type="border"/>
+                                                            <styleitem type="size"/>
+                                                        </styles>
+                                                    </wrapper>
+                                                </components>
+                                            </drawer>
+                                        </action>
+                                    </rowactions>
+                                    <massactions usefirstitemasdefault="true"/>
+                                    <views/>
+                                    <renderconditions logictype="and"/>
+                                    <searchfields/>
+                                </skootable>
+                            </components>
+                        </tab>
+                        <tab name="Financial Accounts" loadlazypanels="true">
+                            <components>
+                                <skootable showconditions="true" showsavecancel="false" showerrorsinline="true" searchmethod="server" searchbox="true" showexportbuttons="false" pagesize="10" alwaysresetpagination="false" createrecords="false" model="Accounts_Orion" buttonposition="" mode="readonly" allowcolumnreordering="true" responsive="true" uniqueid="sk-1Za42w-1056">
+                                    <fields>
+                                        <field id="OASP__OAS_Registration__r.Name" hideable="false" uniqueid="fi-1ZaH1A-1099" valuehalign="" type="" allowordering="true" showbydefault="true" readonly="true"/>
+                                        <field id="OASP__OAS_Account_Type__c" hideable="false" uniqueid="fi-1ZaH19-1097" valuehalign="" type="" allowordering="true" showbydefault="true" readonly="true"/>
+                                        <field id="Name" hideable="false" uniqueid="fi-1ZbB8R-1281" valuehalign="" type="" allowordering="true" readonly="true" showbydefault="true">
+                                            <label>Account Number</label>
+                                        </field>
+                                        <field id="OASP__OAS_Custodian__c" hideable="false" uniqueid="fi-1ZaPVY-1126" valuehalign="" type="" allowordering="true" required="false" showbydefault="true" readonly="true"/>
+                                        <field id="OASP__OAS_Model_Name__c" hideable="false" uniqueid="fi-1ZaeFv-1165" valuehalign="" type="" readonly="true" showbydefault="true"/>
+                                        <field id="OASP__OAS_Cash_Value__c" hideable="false" uniqueid="fi-1ZaPVX-1125" decimalplaces="" valuehalign="" type="" allowordering="true" countBlanks="true" readonly="true" showbydefault="true">
+                                            <summaries/>
+                                        </field>
+                                        <field id="OASP__OAS_Account_Value__c" hideable="false" uniqueid="fi-1ZaH19-1098" decimalplaces="" valuehalign="" type="" readonly="true" allowordering="true" showbydefault="true">
+                                            <summaries/>
+                                        </field>
+                                        <field id="OASP__OAS_Active__c" hideable="true" uniqueid="fi-1Zg6NW-2408" type="" valuehalign="" allowordering="true">
+                                            <renderconditions logictype="and" onhidedatabehavior="keep"/>
+                                            <enableconditions/>
+                                        </field>
+                                        <field id="OASP__OAS_Registration_ID__c" hideable="true" uniqueid="fi-1Zinfa-2869" decimalplaces="" valuehalign="" type="" allowordering="true">
+                                            <renderconditions logictype="and" onhidedatabehavior="keep">
+                                                <rendercondition type="fieldvalue" operator="=" enclosevalueinquotes="false" fieldmodel="Accounts_Orion" sourcetype="fieldvalue" field="OASP__OAS_Registration_ID__c" fieldtargetobjects="OASP__Financial_Account__c" value="0.0"/>
+                                            </renderconditions>
+                                            <enableconditions logictype="and"/>
+                                        </field>
+                                    </fields>
+                                    <rowactions>
+                                        <action type="drawer" label="Account_Details" icon="sk-icon-import" openicon="sk-icon-listview">
+                                            <drawer title="Drawer Area" width="90%" closehandle="true">
+                                                <components>
+                                                    <buttonset model="Accounts_Orion" uniqueid="sk-1ZpbLj-3688" position="center">
+                                                        <buttons>
+                                                            <button type="sfdcweblink" uniqueid="sk-1Zpbeu-3693" weblinkname="OASP__Account_Overview" label="Account Overview" weblinkobject="OASP__Financial_Account__c" icon="sk-icon-page-package"/>
+                                                            <button type="sfdcweblink" uniqueid="sk-1Zpfvh-3703" weblinkname="OASP__OAS_Reports" label="Reports" weblinkobject="OASP__Financial_Account__c" icon="fa-file-image-o"/>
+                                                            <button type="sfdcweblink" uniqueid="sk-1Zpg22-3707" weblinkname="OASP__OAS_Assets" label="Assets" weblinkobject="OASP__Financial_Account__c" icon="sk-icon-money"/>
+                                                            <button type="sfdcweblink" uniqueid="sk-1ZpgAs-3711" weblinkname="OASP__OAS_Transactions" label="Transactions" weblinkobject="OASP__Financial_Account__c" icon="sk-icon-listview"/>
+                                                            <button type="redirect" uniqueid="sk-1Zve2V-1694" weblinkname="OASP__Account_Overview" label="New Task" weblinkobject="OASP__Financial_Account__c" window="blank" url="https://na50.salesforce.com/00T/e?retURL=https%3A%2F%2Factivities.na50.visual.force.com%2Fapex%2FActivities%3Fsfdc.tabName%3D01r6A000000PnuE&amp;_CONFIRMATIONTOKEN=VmpFPSxNakF4T0Mwd015MHlOMVF5TVRvd09Eb3hOaTQwTWpaYSw1VUE0SDBfSURDVUx5VkFhZW9pZ3I1LFlUSmxObUpt&amp;common.udd.actions.ActionsUtilORIG_URI=%2F00T%2Fe" icon="sk-icon-case-close"/>
+                                                        </buttons>
+                                                    </buttonset>
+                                                    <basicfieldeditor showheader="true" showsavecancel="true" showerrorsinline="true" model="Accounts_Orion" buttonposition="" uniqueid="sk-1Zp19F-3623" mode="read">
+                                                        <columns>
+                                                            <column width="33.3%">
+                                                                <sections>
+                                                                    <section title="Performance Summary" collapsible="no">
+                                                                        <fields>
+                                                                            <field uniqueid="sk-1ZuzrO-1574" id="OASP__OAS_Performance_MTD__c" showhelp="true" decimalplaces="" valuehalign="" type=""/>
+                                                                            <field uniqueid="sk-1ZuzrM-1570" id="OASP__OAS_Performance_QTD__c"/>
+                                                                            <field uniqueid="sk-1ZuzrN-1571" id="OASP__OAS_Performance_YTD__c"/>
+                                                                            <field uniqueid="sk-1ZuzrN-1572" id="OASP__OAS_Performance_OneYear__c"/>
+                                                                            <field uniqueid="sk-1ZuzrO-1573" id="OASP__OAS_Performance_ThreeYear__c"/>
+                                                                            <field uniqueid="sk-1ZuzrQ-1575" id="OASP__OAS_Performance_AsOfDate__c"/>
+                                                                        </fields>
+                                                                    </section>
+                                                                </sections>
+                                                            </column>
+                                                            <column width="33.3%">
+                                                                <sections>
+                                                                    <section title="Registration Information" collapsible="no">
+                                                                        <fields>
+                                                                            <field uniqueid="sk-1ZuRjH-1192" id="OASP__OAS_Registration__r.OASP__OAS_Birthdate__c"/>
+                                                                            <field uniqueid="sk-1ZuRjI-1193" id="OASP__OAS_Registration__r.OASP__OAS_SSN__c"/>
+                                                                            <field uniqueid="sk-1ZuRjH-1191" id="OASP__OAS_Registration_ID__c" showhelp="true" decimalplaces="" valuehalign="" type=""/>
+                                                                        </fields>
+                                                                    </section>
+                                                                    <section title="Gain/Loss Summary" collapsible="no">
+                                                                        <fields>
+                                                                            <field uniqueid="sk-1Zu1-5-1041" id="OASP__OAS_Unrealized_GL__c"/>
+                                                                            <field uniqueid="sk-1Zu1-6-1042" id="OASP__OAS_Realized_GL_YTD__c"/>
+                                                                        </fields>
+                                                                    </section>
+                                                                </sections>
+                                                            </column>
+                                                            <column width="33.3%">
+                                                                <sections>
+                                                                    <section title="Allen Capital" collapsible="no">
+                                                                        <fields/>
+                                                                    </section>
+                                                                    <section title="BIlling Information" collapsible="collapsed">
+                                                                        <fields>
+                                                                            <field uniqueid="sk-1Zuh19-1342" id="OASP__Fee_Schedule__c"/>
+                                                                            <field uniqueid="sk-1Zuh1B-1343" id="OASP__Payout_Schedule__c"/>
+                                                                            <field uniqueid="sk-1Zuh1B-1344" id="OASP__Pay_Method__c"/>
+                                                                            <field uniqueid="sk-1Zuh1B-1345" id="OASP__Bill_Frequency__c"/>
+                                                                            <field uniqueid="sk-1Zuh1D-1346" id="OASP__Bill_Style__c"/>
+                                                                            <field uniqueid="sk-1Zuh1D-1347" id="OASP__Bill_Cycle_Month__c"/>
+                                                                        </fields>
+                                                                    </section>
+                                                                    <section title="Orion Status Information" collapsible="collapsed">
+                                                                        <fields>
+                                                                            <field uniqueid="sk-1ZutDD-1490" id="OASP__OAS_Start_Date__c"/>
+                                                                            <field uniqueid="sk-1ZutDE-1491" id="OASP__OAS_Account_ID__c"/>
+                                                                            <field uniqueid="sk-1ZutDE-1492" id="OASP__OAS_Active__c"/>
+                                                                        </fields>
+                                                                    </section>
+                                                                </sections>
+                                                            </column>
+                                                        </columns>
+                                                    </basicfieldeditor>
+                                                </components>
+                                            </drawer>
+                                        </action>
+                                    </rowactions>
+                                    <massactions usefirstitemasdefault="true"/>
+                                    <views/>
+                                    <filters/>
+                                </skootable>
+                            </components>
+                        </tab>
+                        <tab name="Insurance" loadlazypanels="true">
+                            <components>
+                                <skootable showconditions="true" showsavecancel="true" showerrorsinline="true" searchmethod="server" searchbox="true" showexportbuttons="false" pagesize="10" alwaysresetpagination="false" createrecords="true" model="Insurance_Data" buttonposition="" mode="read" allowcolumnreordering="true" responsive="true" uniqueid="sk-1Q52ln-2597">
+                                    <fields>
+                                        <field id="Insured__c" hideable="true" uniqueid="fi-1Q5DEt-2676" valuehalign="" type=""/>
+                                        <field id="Policy_Number__c" hideable="true" uniqueid="fi-1Q5DEt-2672"/>
+                                        <field id="Policy_Owner__c" hideable="true" uniqueid="fi-1Q5DEt-2673"/>
+                                        <field id="Policy_Term__c" hideable="true" uniqueid="fi-1Q5DEt-2674"/>
+                                        <field id="Coverage_Amount__c" hideable="true" uniqueid="fi-1Q5DEt-2675"/>
+                                    </fields>
+                                    <rowactions>
+                                        <action type="drawer" label="Ins_Policy_Details" icon="sk-icon-import" openicon="sk-icon-listview">
+                                            <drawer title="Drawer Area" width="90%" closehandle="true">
+                                                <components>
+                                                    <basicfieldeditor showheader="true" showsavecancel="true" showerrorsinline="true" model="Insurance_Data" buttonposition="" uniqueid="sk-1Q66nX-2805" mode="read">
+                                                        <columns>
+                                                            <column width="50%">
+                                                                <sections>
+                                                                    <section title="Section A" collapsible="no">
+                                                                        <fields>
+                                                                            <field uniqueid="sk-1Q69jn-2820" id="Agent_Name__c"/>
+                                                                            <field uniqueid="sk-1Q69jn-2821" id="Cash_Value__c"/>
+                                                                            <field uniqueid="sk-1Q69jn-2822" id="Cash_Value_as_Of__c"/>
+                                                                            <field uniqueid="sk-1Q69jn-2823" id="Company__c"/>
+                                                                            <field uniqueid="sk-1Q69jn-2824" id="Coverage_Amount__c"/>
+                                                                            <field uniqueid="sk-1Q69jn-2825" id="CreatedDate"/>
+                                                                            <field uniqueid="sk-1Q69jn-2826" id="Current_Death_Benefit__c"/>
+                                                                        </fields>
+                                                                    </section>
+                                                                </sections>
+                                                            </column>
+                                                            <column width="50%">
+                                                                <sections>
+                                                                    <section title="Section B">
+                                                                        <fields/>
+                                                                    </section>
+                                                                </sections>
+                                                            </column>
+                                                        </columns>
+                                                    </basicfieldeditor>
+                                                </components>
+                                            </drawer>
+                                        </action>
+                                    </rowactions>
+                                    <massactions usefirstitemasdefault="true"/>
+                                    <views/>
+                                    <actions defaultlabel="Global Actions" defaulticon="sk-icon-magic" usefirstitemasdefault="true"/>
+                                </skootable>
+                            </components>
+                        </tab>
+                        <tab name="Household Details" loadlazypanels="true">
+                            <components>
+                                <basicfieldeditor showheader="true" showsavecancel="true" showerrorsinline="true" model="Household" buttonposition="" uniqueid="sk-1P-B0o-4147" mode="read">
+                                    <columns>
+                                        <column width="25%">
+                                            <sections>
+                                                <section title="Mailing Address" collapsible="no">
+                                                    <fields>
+                                                        <field uniqueid="sk-1P-sI9-775" id="BillingStreet" valuehalign="" type=""/>
+                                                        <field uniqueid="sk-1P-sI6-773" id="BillingCity"/>
+                                                        <field uniqueid="sk-1P-sI8-774" id="BillingState" valuehalign="" type=""/>
+                                                        <field uniqueid="sk-1P-sI9-776" id="BillingPostalCode"/>
+                                                    </fields>
+                                                </section>
+                                                <section title="Physical Address" collapsible="no">
+                                                    <fields>
+                                                        <field uniqueid="sk-1Q05ve-976" id="ShippingStreet"/>
+                                                        <field uniqueid="sk-1Q05ve-977" id="ShippingCity"/>
+                                                        <field uniqueid="sk-1Q05ve-978" id="ShippingState"/>
+                                                        <field uniqueid="sk-1Q05ve-979" id="ShippingPostalCode"/>
+                                                    </fields>
+                                                </section>
+                                            </sections>
+                                        </column>
+                                        <column width="25%">
+                                            <sections>
+                                                <section title="Household Performance" collapsible="no">
+                                                    <fields>
+                                                        <field uniqueid="sk-1Q2hM0-1919" id="OASP__OAS_Performance_AsOfDate__c" showhelp="true" valuehalign="" type=""/>
+                                                        <field uniqueid="sk-1Q2hL_-1917" id="OASP__OAS_Performance_QTD__c" showhelp="true" decimalplaces="" valuehalign="" type=""/>
+                                                        <field uniqueid="sk-1Q2hL_-1918" id="OASP__OAS_Performance_YTD__c" showhelp="true" decimalplaces="" valuehalign="" type=""/>
+                                                        <field uniqueid="sk-1Q2hLx-1915" id="OASP__OAS_Performance_OneYear__c"/>
+                                                        <field uniqueid="sk-1Q2hL_-1916" id="OASP__OAS_Performance_ThreeYear__c"/>
+                                                    </fields>
+                                                </section>
+                                                <section title="Contact Information" collapsible="no">
+                                                    <fields>
+                                                        <field uniqueid="sk-1P-_Ya-894" id="Phone"/>
+                                                        <field uniqueid="sk-1P-_Ya-895" id="OASP__OAS_Mobile_Phone__c"/>
+                                                        <field uniqueid="sk-1P-_Ya-896" id="Primary_Phone_Type__c"/>
+                                                        <field uniqueid="sk-1P-_Ya-897" id="OASP__OAS_Work_Phone__c"/>
+                                                        <field uniqueid="sk-1P-_Ya-898" id="OASP__OAS_Email2__c"/>
+                                                        <field uniqueid="sk-1P-_Ya-899" id="OASP__OAS_Email__c"/>
+                                                    </fields>
+                                                </section>
+                                            </sections>
+                                        </column>
+                                        <column width="25%">
+                                            <sections>
+                                                <section title="Household Gain/Loss Summary" collapsible="no">
+                                                    <fields>
+                                                        <field uniqueid="sk-1Q2sUY-2053" id="OASP__OAS_Unrealized_GL__c"/>
+                                                        <field uniqueid="sk-1Q2sUW-2052" id="OASP__OAS_Reailzed_GL_YTD__c" showhelp="true" decimalplaces="" valuehalign="" type=""/>
+                                                        <field uniqueid="sk-1Q2sUY-2054" id="OASP__OAS_Realized_GL_Previous_Year__c"/>
+                                                    </fields>
+                                                </section>
+                                                <section title="Orion Information" collapsible="no">
+                                                    <fields>
+                                                        <field uniqueid="sk-1Q11KK-1271" id="OASP__Orion_Rep_ID__c" showhelp="true" decimalplaces="" valuehalign="" type=""/>
+                                                        <field uniqueid="sk-1Q0Tr3-1146" id="OASP__OAS_Rep__c"/>
+                                                        <field uniqueid="sk-1Q11KK-1273" id="OASP__OAS_SSN__c" showhelp="true" valuehalign="" type=""/>
+                                                        <field uniqueid="sk-1Q11KK-1269" id="OASP__OAS_Birthdate__c"/>
+                                                        <field uniqueid="sk-1Q11KK-1270" id="OASP__OAS_Household_ID__c" showhelp="true" decimalplaces="" valuehalign="" type=""/>
+                                                        <field uniqueid="sk-1Q11KK-1274" id="OASP__OAS_Statement_Delivery__c"/>
+                                                        <field uniqueid="sk-1Q11KK-1275" id="OASP__OAS_Report_Name__c" valuehalign="" type=""/>
+                                                    </fields>
+                                                </section>
+                                            </sections>
+                                        </column>
+                                        <column width="25%">
+                                            <sections>
+                                                <section title="Salesforce Information" collapsible="no">
+                                                    <fields>
+                                                        <field uniqueid="sk-1Q1Gkz-1406" id="Owner.Name" valuehalign="" type="">
+                                                            <label>Household Owner</label>
+                                                        </field>
+                                                        <field uniqueid="sk-1Q1PD9-1483" id="Id" valuehalign="" type=""/>
+                                                        <field uniqueid="sk-1Q3A-v-2172" id="LastModifiedDate"/>
+                                                        <field uniqueid="sk-1Q3A-v-2173" id="LastModifiedBy.Name" valuehalign="" type="">
+                                                            <label>Last Modified By</label>
+                                                        </field>
+                                                    </fields>
+                                                </section>
+                                            </sections>
+                                        </column>
+                                    </columns>
+                                </basicfieldeditor>
+                            </components>
+                        </tab>
+                    </tabs>
+                    <renderconditions logictype="and"/>
+                </tabset>
+            </components>
+            <renderconditions logictype="and">
+                <rendercondition type="fieldvalue" operator="=" enclosevalueinquotes="true" fieldmodel="Household" sourcetype="fieldvalue" nosourcerowbehavior="deactivate" value="/{{Id}}"/>
+            </renderconditions>
+        </pageregioncontent>
+    </pageregioncontents>
+    <components/>
+    <resources>
+        <labels/>
+        <css>
+            <cssitem location="inline" name="Hide_Footer" cachelocation="false" url="" namespace="">.hidetablefooter .nx-list-footer-left {	
+    display:none;
+}</cssitem>
+        </css>
+        <javascript/>
+        <actionsequences uniqueid="sk-3ym7ra-331"/>
+    </resources>
+</skuidpage>
