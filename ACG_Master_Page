@@ -1,0 +1,119 @@
+<skuidpage unsavedchangeswarning="yes" personalizationmode="server" showsidebar="false" useviewportmeta="true" showheader="false" theme="Cool Grey">
+    <models/>
+    <components>
+        <pageregion uniqueid="sk-3uGMeh-282">
+            <styles>
+                <styleitem type="background" bgtype="none"/>
+            </styles>
+        </pageregion>
+    </components>
+    <resources>
+        <labels/>
+        <javascript/>
+        <css/>
+        <actionsequences/>
+    </resources>
+    <styles>
+        <styleitem type="background" bgtype="none"/>
+    </styles>
+    <pageregioncontents>
+        <pageregioncontent uniqueid="__header">
+            <components>
+                <skuidheader sticky="true">
+                    <components>
+                        <grid uniqueid="sk-3u6Yn7-215">
+                            <divisions>
+                                <division behavior="fit" verticalalign="center">
+                                    <components>
+                                        <image source="staticresource" uniqueid="sk-3u6bvN-252" datasource="salesforce" behavior="none">
+                                            <styles>
+                                                <styleitem type="itemsize"/>
+                                                <styleitem type="border"/>
+                                            </styles>
+                                        </image>
+                                    </components>
+                                </division>
+                                <division behavior="flex" verticalalign="top" minwidth="100px" ratio="1">
+                                    <components>
+                                        <navigation uniqueid="sk-3u7WcW-280" maxheight="true">
+                                            <navigationitems>
+                                                <navigationitem label="Opportunities" uniqueid="sk-3uEc6N-1001">
+                                                    <actions>
+                                                        <action type="redirect" window="self"/>
+                                                    </actions>
+                                                    <navigationitems>
+                                                        <navigationitem label="New Opportunity" uniqueid="sk-3uEiEu-1106">
+                                                            <actions>
+                                                                <action type="redirect" window="self"/>
+                                                            </actions>
+                                                        </navigationitem>
+                                                    </navigationitems>
+                                                </navigationitem>
+                                                <navigationitem label="Orion Connect" uniqueid="sk-3uEq4C-1156">
+                                                    <actions>
+                                                        <action type="redirect" window="self" url="https://na50.salesforce.com/servlet/servlet.Integration?lid=01r6A0000002cEq&amp;ic=1&amp;linkToken=VmpFPSxNakF4T0Mwd015MHdPRlF5TVRvMU5qb3lPQzQzTVRkYSxDRmhpd1RBaFhUZktpNDhRWU5zTFh2LFlXWmtNR0po"/>
+                                                    </actions>
+                                                </navigationitem>
+                                            </navigationitems>
+                                            <styles/>
+                                            <renderconditions logictype="and"/>
+                                        </navigation>
+                                    </components>
+                                </division>
+                                <division behavior="flex" verticalalign="center" minwidth="220px" ratio=".001">
+                                    <components>
+                                        <search uniqueid="sk-3u7hIp-301" soslfields="Name Fields" placeholdertext="Search ACG Portal">
+                                            <resultactions/>
+                                            <objects>
+                                                <object datasource="salesforce" id="Contact" icon="sk-icon-personal-info" headername="Contacts" fields="Account.Name" orderby="FirstName ASC" fieldtargetobjects="Account" displaytemplate="{{Name}} - {{Account.Name}}">
+                                                    <fields>
+                                                        <field id="Name"/>
+                                                        <field id="Account.Name"/>
+                                                    </fields>
+                                                </object>
+                                            </objects>
+                                            <selectactions>
+                                                <action type="redirect" window="self" url="/{{Id}}"/>
+                                            </selectactions>
+                                            <focushotkeys/>
+                                        </search>
+                                    </components>
+                                </division>
+                                <division behavior="fit" verticalalign="center">
+                                    <components>
+                                        <navigation uniqueid="sk-3u8oG3-534" type="dropdown" label="{{$User.name}}" maxheight="true">
+                                            <navigationitems>
+                                                <navigationitem label="My Profile" uniqueid="sk-1a4Agv-253">
+                                                    <actions>
+                                                        <action type="redirect" window="blank" url="https://cs94.salesforce.com/_ui/core/userprofile/UserProfilePage?tab=sfdc.ProfilePlatformFeed"/>
+                                                    </actions>
+                                                </navigationitem>
+                                                <navigationitem label="Setup" uniqueid="sk-1a4F9h-262">
+                                                    <actions>
+                                                        <action type="redirect" window="self" url="https://cs94.salesforce.com/setup/forcecomHomepage.apexp?setupid=ForceCom&amp;retURL=%2F_ui%2Fcore%2Fuserprofile%2FUserProfilePage%3Ftab%3Dsfdc.ProfilePlatformFeed"/>
+                                                    </actions>
+                                                </navigationitem>
+                                                <navigationitem label="Logout" uniqueid="sk-1a4lat-255">
+                                                    <actions>
+                                                        <action type="redirect" window="self" url="https://cs94.salesforce.com/secur/logout.jsp"/>
+                                                    </actions>
+                                                </navigationitem>
+                                            </navigationitems>
+                                        </navigation>
+                                    </components>
+                                </division>
+                            </divisions>
+                            <styles>
+                                <styleitem type="background" bgtype="none"/>
+                            </styles>
+                        </grid>
+                    </components>
+                    <styles>
+                        <styleitem type="background" bgtype="none"/>
+                        <styleitem type="border"/>
+                    </styles>
+                </skuidheader>
+            </components>
+        </pageregioncontent>
+    </pageregioncontents>
+</skuidpage>
